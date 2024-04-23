@@ -9,16 +9,22 @@ export const useAnnouncementContext = () => useContext(AnnouncementContext);
 
 // Context provider component
 export const AnnouncementProvider = ({ children }) => {
+  
   const [announcements, setAnnouncements] = useState([]);
 
   const refreshAnnouncements = (newAnnouncements) => {
+    
     setAnnouncements(newAnnouncements);
-    console.log('bhadwerefresh hoja');
+    
+    console.log('bhadwerefresh hoja Bhai');
+    
   };
 
   return (
     <AnnouncementContext.Provider value={{ announcements, refreshAnnouncements }}>
+      
       {children}
+      
     </AnnouncementContext.Provider>
   );
 };
