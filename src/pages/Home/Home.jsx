@@ -34,13 +34,16 @@ function Home() {
       window.location.href = "/";
     }
   }, []);
-
+  const colors = ["bg-green-300", "bg-blue-300", "bg-yellow-300", "bg-purple-300", "bg-red-300"];
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  let col=colors[randomIndex];
   return (
     <div className="Home">
       <div>
         <Cards
           className=" border border-black "
           classes={classes}
+          color={col}
           deleteClass={(class_id, creatorUid) => deleteClass(class_id, creatorUid, classes, setClasses, updateClasses)}
           updateClasses={updateClasses}
         />
