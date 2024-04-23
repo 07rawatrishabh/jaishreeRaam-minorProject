@@ -1,15 +1,15 @@
 // AnnouncementContext.jsx
-import React, { createContext, useContext, useState } from "react";
+import React from "react";
 
 // Create the context
-const AnnouncementContext = createContext();
+const AnnouncementContext = React.createContext();
 
 // Custom hook to use the context
-export const useAnnouncementContext = () => useContext(AnnouncementContext);
+export const useAnnouncementContext = () => React.useContext(AnnouncementContext);
 
 // Context provider component
 export const AnnouncementProvider = ({ children }) => {
-  const [announcements, setAnnouncements] = useState([]);
+  const [announcements, setAnnouncements] = React.useState([]);
 
   const refreshAnnouncements = (newAnnouncements) => {
     setAnnouncements(newAnnouncements);
